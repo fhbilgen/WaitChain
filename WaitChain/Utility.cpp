@@ -10,16 +10,16 @@
 /******************************************** GLOBAL VARIABLES	********************************************
  
 
- g_OutputFileName	:	The full path name of the report file that the Godot.exe tool generates
+ g_OutputFileName	:	The full path name of the report file that the WaitChain.exe tool generates
  g_FileStream		:	The global filestream pointer
  g_ProcessName		:	Process Name for which the process instances will be searched for
- g_PID				:	ProcessID of the Godot.exe process
+ g_PID				:	ProcessID of the WaitChain.exe process
  g_szProcSuffix		:	Process Name Suffix. i.e. .exe
  g_szProcName		:	Process Name for which the process instances will be searched for
- g_fProcName		:	Will Godot.exe work on process names ?
- g_fProcID			:	Will Godot.exe work on a specific Process ID ?
- g_fDump			:	Should Godot.exe generate memory dump files of the processes taking part in WaitChains
- g_dwProcID			:	The process ID for which Godot.exe will report the wait chain
+ g_fProcName		:	Will WaitChain.exe work on process names ?
+ g_fProcID			:	Will WaitChain.exe work on a specific Process ID ?
+ g_fDump			:	Should WaitChain.exe generate memory dump files of the processes taking part in WaitChains
+ g_dwProcID			:	The process ID for which WaitChain.exe will report the wait chain
  szStartString		:	The format string for report start time logging
  szFinishString		:	The format string for report end time logging
 *************************************************************************************************************/
@@ -131,7 +131,7 @@ void OutputCloseFile( void )
 
 void DisplayDescription()
 {
-	_tprintf(_TEXT("\nGodot v1.0 Wait Chain traversal utility\n"));
+	_tprintf(_TEXT("\nWaitChain v1.0 Wait Chain traversal utility\n"));
 	_tprintf(_TEXT("Reports the Wait Chain of a process.\n"));
 	_tprintf(_TEXT("Optionally, generates memory dump files of the processes listed in the Wait Chain.\n"));
 }
@@ -139,7 +139,7 @@ void DisplayDescription()
 void DisplaySyntax()
 {
 	_tprintf(_TEXT("\nUsage:"));
-	_tprintf(_TEXT("\n\tGodot.exe [ProcID | ProcName, [/d]] | [/?]\n"));
+	_tprintf(_TEXT("\n\WaitChain.exe [ProcID | ProcName, [/d]] | [/?]\n"));
 }
 
 void DisplayUsage()
@@ -154,7 +154,7 @@ void DisplayUsage()
 	_tprintf(_TEXT("\n\t\tfor each running process will be generated and the /d option is discarded.\n"));
 	_tprintf(_TEXT("\n/d\t\tThe memory dump file of each process that is in the Wait Chain will be generated.\n"));
 	_tprintf(_TEXT("\n/?\t\tDisplays this help\n"));
-	_tprintf(_TEXT("\nGodot.exe generates a text file report in the same folder where it runs."));
+	_tprintf(_TEXT("\WaitChain.exe generates a text file report in the same folder where it runs."));
 	_tprintf(_TEXT("\nThe file name format is WAITCHAIN_computername.LOG\n"));
 }
 
@@ -192,7 +192,7 @@ BOOL ProcessArguments(int argc, _TCHAR **argv)
 			}
 		}
 		
-		// Godot will process ProcID
+		// WaitChain will process ProcID
 		if (fDigit)
 		{	
 			g_fProcID = TRUE;

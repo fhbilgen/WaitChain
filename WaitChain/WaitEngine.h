@@ -6,7 +6,7 @@
 
 /*********************************************************************************************************************************************************************
 
-The Godot.exe tool is based on the "Wait Chain Traversal" API https://msdn.microsoft.com/en-us/library/windows/desktop/ms681622(v=vs.85).aspx
+The WaitChain.exe tool is based on the "Wait Chain Traversal" API https://msdn.microsoft.com/en-us/library/windows/desktop/ms681622(v=vs.85).aspx
 
 The core functionality of the tool is in the WaitEngine.h and WaitEngine.cpp files. And, the code is mainly based on the MSDN sample 
 

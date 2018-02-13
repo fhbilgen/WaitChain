@@ -43,7 +43,7 @@ void PutTime(BOOL fStart);
 
 Routine Description:
 
-Gets the Process ID and command line information of the Godot.exe process
+Gets the Process ID and command line information of the WaitChain.exe process
 Outputs this information to the report file.
 
 Arguments		:	None
@@ -102,7 +102,7 @@ void OutputDoHeader(_TCHAR* szHeaderName);
 
 Routine Description:
 
-Outputs a small description of the Godot.exe tool
+Outputs a small description of the WaitChain.exe tool
 
 Arguments		:	None
 
@@ -115,7 +115,7 @@ void DisplayDescription();
 
 Routine Description:
 
-Displays the Godot.exe program's input syntax on to the screen
+Displays the WaitChain.exe program's input syntax on to the screen
 
 Arguments		:	None
 
@@ -128,7 +128,7 @@ void DisplaySyntax();
 
 Routine Description:
 
-Displays the Godot.exe program's input argument explanation and usage information
+Displays the WaitChain.exe program's input argument explanation and usage information
 
 Arguments		:	None
 
