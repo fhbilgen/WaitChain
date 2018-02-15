@@ -139,12 +139,11 @@ void DisplayDescription()
 void DisplaySyntax()
 {
 	_tprintf(_TEXT("\nUsage:"));
-	_tprintf(_TEXT("\n\WaitChain.exe [ProcID | ProcName, [/d]] | [/?]\n"));
+	_tprintf(_TEXT("\nWaitChain.exe [ProcID | ProcName, [/d]] | [/?]\n"));
 }
 
 void DisplayUsage()
-{
-	DisplayDescription();
+{	
 	DisplaySyntax();
 
 	_tprintf(_TEXT("\nOptions:"));
@@ -154,7 +153,7 @@ void DisplayUsage()
 	_tprintf(_TEXT("\n\t\tfor each running process will be generated and the /d option is discarded.\n"));
 	_tprintf(_TEXT("\n/d\t\tThe memory dump file of each process that is in the Wait Chain will be generated.\n"));
 	_tprintf(_TEXT("\n/?\t\tDisplays this help\n"));
-	_tprintf(_TEXT("\WaitChain.exe generates a text file report in the same folder where it runs."));
+	_tprintf(_TEXT("\nWaitChain.exe generates a text file report in the same folder where it runs."));
 	_tprintf(_TEXT("\nThe file name format is WAITCHAIN_computername.LOG\n"));
 }
 
