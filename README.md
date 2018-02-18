@@ -2,9 +2,9 @@
 
 DESCRIPTION
 
-The WaitChain.exe tool is based on the WCT API example in MSDN. 
+The WaitChain.exe tool is based on the WCT API example in MSDN. A detailed explanation is at https://blogs.msdn.microsoft.com/hmm/2018/02/18/waitchain/
 
-It generates a text file reporting either:
+The tool generates a text file reporting either:
 Every process’s Wait Chain when no particular process is specified
 A particular process’s Wait Chain list if the ProcessID is specified 
 The Wait Chain list of each process instance of an application if the ProcessName is specified
