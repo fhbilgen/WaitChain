@@ -1,3 +1,4 @@
+
 # WaitChain
 
 DESCRIPTION
@@ -39,6 +40,7 @@ WaitChain.exe generates a text file report in the same folder where it runs.
 The file name format is WAITCHAIN_computername.LOG
 
 FUTURE WORK
+
 The output file format is not text. This can be HTML for better visualization.
 Current implementation allows only one ProcessName to be specified as an argument. Multiple ProcessName could be allowed.
 There is no customization for the command line arguments of procdump. This can be configurable.
