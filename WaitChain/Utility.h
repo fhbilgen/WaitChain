@@ -64,7 +64,7 @@ Arguments		:	None
 Return Value	:	None
 
 --*/
-void OutputSetFile(void);
+BOOL OutputSetFile(void);
 
 /*++
 

@@ -81,11 +81,12 @@ void OutputDoHeader(_TCHAR* szHeaderName)
 	
 }
 
-void OutputSetFile( void )
+BOOL OutputSetFile(void)
 {
 
 	TCHAR	szCompName[MAX_COMPUTERNAME_LENGTH + 1];
 	DWORD	cName = MAX_COMPUTERNAME_LENGTH;
+	_TCHAR	szErrorMessage[MAX_PATH];
 	errno_t err;
 	
 	// Build the file name
@@ -100,27 +101,33 @@ void OutputSetFile( void )
 		// could not get the computer name therefore failing back to the default name
 		_tcscat_s(g_OutputFileName, MAX_PATH, OUTPUT_FILE_SUFFIX);
 
-	// Destroy any existing file and close it
-	
+	// Destroy any existing file and close it	
 	err = _tfopen_s(&g_FileStream, g_OutputFileName, _TEXT("w+"));
 
 	if (err != 0 || !g_FileStream)
-		_tprintf(_TEXT("Error opening output file %#x\n"), err);
+	{		
+		_tcserror_s(szErrorMessage, sizeof(_TCHAR)*MAX_PATH, err);		
+		_tprintf(_TEXT("\nError opening output file.\n"));
+		_tprintf(_TEXT("Error No:%d\t Error Message:%s\n"), err, szErrorMessage);
+		return FALSE;
+	}
 	else
 	{
 		fflush(g_FileStream);
 		fclose(g_FileStream);
 	}
-		
-	
-	
 
 	// Finally open the file
 	err = _tfopen_s(&g_FileStream, g_OutputFileName, _TEXT("a"));
 	if (err != 0)
-		_tprintf(_TEXT("Error opening output file %#x\n"), err);
-
-	return;
+	{
+		_tcserror_s(szErrorMessage, sizeof(_TCHAR)*MAX_PATH, err);
+		_tprintf(_TEXT("Error opening output file.\n"));
+		_tprintf(_TEXT("Error No:%d\t Error Message:%s\n"), err, szErrorMessage);
+		return FALSE;
+	}
+	else
+		return TRUE;
 
 }
 
