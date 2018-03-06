@@ -46,6 +46,7 @@ The file name format is WAITCHAIN_computername.LOG
 ```
 * The output file format is text. This can be HTML for better visualization.
 * An argument for output filename and path.
+* An argument to specify the dump type. Mini, full, etc.
 * Current implementation allows only one ProcessName to be specified as an argument. Multiple ProcessName could be allowed.
 * There is no customization for the command line arguments of procdump. This can be configurable.
 * The NetworkIO and SMB wait types are not explored yet. They can be added and tested.
